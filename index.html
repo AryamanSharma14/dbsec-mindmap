@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Database Security Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="units" id="tabs">
+  <button data-unit="III" class="on">Unit III</button>
+  <button data-unit="IV">Unit IV</button>
+  <i class="ind" id="ind"></i>
+</nav>
+
+<button id="kebab" aria-label="Options" aria-expanded="false"><span></span><span></span><span></span></button>
+<div id="menu" hidden>
+  <div class="ml">Layout</div>
+  <div class="seg" id="modes">
+    <button data-mode="tree" class="on">Tree</button>
+    <button data-mode="both">Both sides</button>
+  </div>
+  <div class="ml">View</div>
+  <button class="mi" id="expandAll">Expand all</button>
+  <button class="mi" id="collapseAll">Collapse all</button>
+  <button class="mi" id="fit">Fit to screen</button>
+  <div class="ml">Connection</div>
+  <button class="mi" id="bridgeOpen">Build the bridge</button>
+</div>
+
+<svg id="map" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".34"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#B8964E" stop-opacity=".28"/><stop offset="1" stop-color="#B8964E" stop-opacity="0"/></radialGradient>
+  </defs>
+  <g id="view"><g id="links"></g><g id="nodes"></g></g>
+</svg>
+
+<aside id="card" aria-live="polite"></aside>
+
+<section id="bv" hidden>
+  <div class="bv-bar">
+    <button id="bvReplay">Replay</button>
+    <button id="bvClose">Close</button>
+  </div>
+  <div class="bv-in">
+    <p class="bv-over">Unit III and Unit IV</p>
+    <h2>Control on one bank, evidence on the other</h2>
+    <div id="bvScene"></div>
+    <p class="bv-cap">Unit III decides what users are allowed to do. Unit IV shows what they actually did. A request only becomes trustworthy when it crosses both.</p>
+  </div>
+</section>
+
+<script src="data.js"></script>
+<script src="explain.js"></script>
+<script src="diagrams.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
